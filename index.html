@@ -13,7 +13,8 @@
 </head>
 
 <body>
-    <!-- Header Starts -->
+    <form id="form">
+        <!-- Header Starts -->
     <div class="header">
         <div class="header__left">
 
@@ -47,7 +48,10 @@
             </div>  
 
             <div class="link-items">
-                <p1><a href="tout">Tout</a></p1> <p2><a href="video">Videos</a></p2><p3><a href="image">Images</a></p3><p4><a href="actualites">actualites</a></p4>
+                <p1><a href="#tout" id="all">Tout</a></p1> 
+                <p2><a href="#video" id="videos">Videos</a></p2>
+                <p3><a href="#image" id="images">Images</a></p3>
+                <p4><a href="#actualites" id="news">actualites</a></p4>
                 
             </div>
             
@@ -63,7 +67,9 @@
         
         </div>
     </div>
-   
+    <script src="./node_modules/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+    </form>
 </body>
 
 </html>
