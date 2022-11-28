@@ -1,42 +1,26 @@
-
-// const axios = require('axios');
-// const params = {
-//   access_key: '147965fef5265a580d01fcc1c17afd7d',
-//   query: 'mcdonalds'
-// }
-
-// axios.get('http://127.0.0.1:5555/serp.php', {params})
-//   .then(response => {
-//     const apiResponse = response.data;
-//     console.log("Total results: ", apiResponse.search_information.total_results);
-//     apiResponse.organic_results.map((result, number) =>
-//       console.log(`${number+1}. ${result.title}`));
-//   }).catch(error => {
-//     console.log(error);
-//   });
-
-document.getElementById("form").submit(function (e){
+$("#form").submit(function (e){
     e.preventDefault()
 
-    let query = document.getElementById("search").val()
+    var query = $("#search").val()
 
-    let ACCESS_KEY = "147965fef5265a580d01fcc1c17afd7d"
+    let ACCESS_KEY = "ca2558dd76f382927b11da2c3084c33c"
 
-    let type = function(){
-        if(document.getElementById("videos").onclick)
-            return "videos"
-        else if(document.getElementById("images").onclick)
-            return "images"
-        else if(document.getElementById("news").onclick)
-            return "news"
-        else
-            return "web" 
-    }
+    let result
     
     let url = "http://api.serpstack.com/search?access_key=" + ACCESS_KEY +
-              "&type=" + type + "&query=" + query
+              "&type=web&query=" + query
     
     $.get(url, function(data){
         console.log(data)
+
+        data.organic_results.forEach(res => {
+            result = `
+
+                <h1>${res.title}<\h1><br><a href = "${res.url}" target = "_parent"></a>
+                <p>${res.snippet}</p>
+            `
+                $("#result").append(result)
+            
+        });
     })
 })
