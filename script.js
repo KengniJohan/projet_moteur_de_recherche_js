@@ -1,14 +1,14 @@
 $("#form").submit(function (e){
     e.preventDefault()
-
+    tndbapi
     var query = $("#search").val()
 
-    let ACCESS_KEY = "ca2558dd76f382927b11da2c3084c33c"
+    let ACCESS_KEY = "f71c81e37f795d4385b28233486f55a8"
 
     let result
     
     let url = "http://api.serpstack.com/search?access_key=" + ACCESS_KEY +
-              "&type=web&query=" + query
+              "&type=videos&query=" + query
     
     $.get(url, function(data){
         console.log(data)
@@ -16,7 +16,7 @@ $("#form").submit(function (e){
         data.organic_results.forEach(res => {
             result = `
 
-                <h1>${res.title}<\h1><br><a href = "${res.url}" target = "_parent"></a>
+                <h1>${res.title}<\h1><br><a href = "${res.url}" target = "_blank">${res.url}</a>
                 <p>${res.snippet}</p>
             `
                 $("#result").append(result)

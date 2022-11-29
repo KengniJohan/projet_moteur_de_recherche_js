@@ -13,7 +13,6 @@
 </head>
 
 <body>
-    <form id="form" autocomplete="off">
         <!-- Header Starts -->
     <div class="header">
         <div class="header__left">
@@ -36,17 +35,24 @@
     <!-- Main Body Starts  -->
     <div class="main-container">
        
-        <div class="mainBody">
+        <!-- <div class="mainBody">
             <img scr="https://fonts.googleapis.com/icon?family=Material+Icons" alt="">
 
-        </div>
+        </div> -->
         <div class="search">
             
             <div class="search__input">
-                <input type="search" name="search" id="search" placeholder="entrer un element a rechercher">
-                <button><span class="material-icons" id="material-icons">search</span></button>
+                <form id="form" autocomplete="off">
+                    <input type="search" name="search" id="search" placeholder="entrer un element a rechercher">
+                    <!-- <button><span class="material-icons" id="material-icons">search</span></button> -->
+                </form>
             </div>
-            
+            <div class="link-items">
+                <a href="">Tout</a>
+                <a href="">Images</a>
+                <a href="">Videos</a>
+                <a href="">Actualites</a>
+            </div>
         </div>
         <div class="result" id="result">
         </div>
@@ -54,13 +60,10 @@
         <!--<div class="square"></div>
         <div class="circle"></div>
         -->
-        
-        </div>
     </div>
     <script src="./node_modules/axios/dist/axios.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
     <script src="script.js"></script>
-    </form>
 </body>
 
 </html>
